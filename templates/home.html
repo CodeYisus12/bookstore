@@ -7,11 +7,12 @@
     {% if user.is_authenticated %}
         <p>Ola {{ user.email }}</p>
         <form action="{% url 'logout' %}" method="post">
-            {% scrf_token %}
+            {% csrf_token %}
             <button type="submit">Log out</button>
         </form>
     {% else %}
         <p>No estas registrado</p>
         <a href="{% url 'login' %}">Log In</a>
+        <a href="{% url 'signup' %}">Sign Up</a>
     {% endif %}
 {% endblock content %}
