@@ -4,6 +4,8 @@
     {% for book in book_list %}
         <br>
         <br>
-        <a href="">{{ book.title }}</a>
+        <div>
+            <h2><a href="{{ book.get_absolute_url }}">{{ book.title }}</a></h2>
+        </div>
     {% endfor %}
 {% endblock content %}
